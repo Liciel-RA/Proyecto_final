@@ -1,3 +1,6 @@
+//Daniela Jace Olguín Montiel A01746612 
+//Liciel Reyes Ávila A01745016
+
 #ifndef PANTALON_C
 #define PANTALON_C
 
@@ -14,6 +17,7 @@ private:
     string broche;
 public:
 
+    //Constructor
     Pantalon(){
         medidaCadera = 0;
         medidaCintura = 0;
@@ -22,6 +26,7 @@ public:
         broche = "";
     }
 
+    //Constructor
     Pantalon(float cadera,float cintura, float muslo, string color, string br){
         medidaCadera = cadera;
         medidaCintura = cintura;
@@ -31,6 +36,7 @@ public:
 
     }
 
+    //Setters y Getters
     float getMedidaCadera(){return medidaCadera;}
     void setMedidaCadera(float cadera){medidaCadera = cadera;}
     
@@ -46,18 +52,20 @@ public:
     string getBroche(){return broche;}
     void setBroche(string br){broche = br;}
 
+    //Funcion que regresa string concatenada para conocer talla de pantalon segun las medidas 
     string conocerTalla()
     {
-        string talla {}; //Variable para almacenar talla pantalon
+        string talla {}; 
 
         if (medidaCadera == 96 &&  medidaMuslo == 58) {talla = "S"; }
         else if (medidaCadera == 100 &&  medidaMuslo == 60) {talla = "M"; }
         else {talla = "G";}
 
-        //Concatenación de strings
         return "Talla. Su talla en pantalones es " + talla;
     }
 
+    //Funcion para conocer precio del pantalon dependiendo de si tiene botones o cierre. \
+    En caso de tener botones, costará $450. De no ser así, su precio será de $350.
     float precioPantalon()
     {
         float precio {};
@@ -68,7 +76,7 @@ public:
         return precio;
     }
 
-
+    //Función que regresa string concatenada con datos del pantalon (color, botones/ cierre, medidas).
     string print()
     {
         return "Pantalon(Color: " + colorPantalon + ", Botones o cierre: " + broche + ", Medidas(Medida de cadera en cm: " + to_string(medidaCadera) + ", Medida de cintura en cm: " + to_string(medidaCintura) + ", Medida de muslo en cm: " + to_string(medidaMuslo) + "))";

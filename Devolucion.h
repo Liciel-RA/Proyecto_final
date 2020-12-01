@@ -16,6 +16,7 @@ private:
     int metodoDevolucion;
 public:
 
+    //Constructor
     Devolucion(){
         tipoPrenda = "";
         generoPrenda = "";
@@ -23,6 +24,7 @@ public:
         metodoDevolucion = 0;
     }
 
+    //Constructor
     Devolucion(string prenda,string genero, string estado, int metodo){
         tipoPrenda = prenda;
         generoPrenda = genero;
@@ -30,6 +32,7 @@ public:
         metodoDevolucion = metodo;
     }
 
+    //Getters y Setters
     string getTipoPrenda(){return tipoPrenda;}
     void setTipoPrenda(string prenda){tipoPrenda = prenda;}
     
@@ -42,6 +45,8 @@ public:
     int getMetodoDevolucion(){return metodoDevolucion;}
     void setMetodoDevolucion(int metodo){metodoDevolucion = metodo;}
 
+    //Funcion que regresa string con el porcentaje del reembolso al cliente, dependiendo del \
+    estado del producto a devolver. Si es usado, se le regresa el 50%. Si es nuevo, se le regresa el 100%
     string cantidadReembolso()
     {
         string reembolso {}; 
@@ -52,6 +57,9 @@ public:
         return reembolso;
     }
 
+    //Funcion que regresa un dato entero para saber el descuento en pesos mexicanos que se le \
+    hará al cliente en su siguiente compra dependiendo del estado del producto a devolver. \
+    Si es usado, será de $100. Si es nuevo, será de 150.
     int descuentoProximaCompra()
     {
         int descuento {};
@@ -62,6 +70,7 @@ public:
         return  descuento;
     }
 
+    //Funcion que regresa string de cómo devolverá el cliente el producto
     string tipoDevolucion()
     {
         string metodo {};
@@ -70,6 +79,8 @@ public:
         return metodo;
     }
 
+    //Funcion que regresa datos de la devolucion (tipo de producto, género del producto, estado \
+    del producto, método de devolución)
     string print()
     {
         return "Devolucion(Tipo de Prenda: " + tipoPrenda + ", Genero de prenda: " + generoPrenda + ", Estado de prenda: " + estadoPrenda + ", Metodo de devolucion: " + to_string(metodoDevolucion) + ")" ;
