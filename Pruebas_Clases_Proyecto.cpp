@@ -5,6 +5,7 @@
 #include "Blusa.h"
 #include "Pantalon.h"
 #include "Devolucion.h" //Archivo de clase creada por Liciel Reyes Ávila (ETAPA INDIVIDUAL)
+#include "Cancelar.h" //Archivo de clase creada por Daniela Jace Olguín Montiel (ETAPA INDIVIDUAL)
 
 #include <string>
 #include <iostream>
@@ -88,6 +89,30 @@ int main()
     cout << "\n";
     cout << "\n";
 
+    //PRUEBAS CLASE CANCELAR  
+    cout << "* * * Pruebas para clase Cancelar * * *" << endl;
+    Cancelar cancelar1{"Blusa","Femenino","287",0};
+    cout << cancelar1.print() << endl;
+    cout << "Mensaje :  " << cancelar1.pagoInicial() << endl;
+    cout << "Atencion : " << cancelar1.confirmaCancelar() << endl;
+
+    cout << "\n";
+
+    Cancelar cancelar2{"Pantalon","Masculino","2773",1};
+    cout << cancelar2.print() << endl;
+    cout << "Mensaje : " << cancelar2.pagoInicial() << endl;
+    cout << "Atencion : " << cancelar2.confirmaCancelar() << endl;
+
+    cout << "\n";
+
+    Cancelar cancelar3{"Blusa","Unisex","647374",0};
+    cout << cancelar3.print() << endl;
+    cout << "Mensaje: " << cancelar3.pagoInicial() << endl;
+    cout << "Atencion : " << cancelar3.confirmaCancelar() << endl;
+
+    cout << "\n";
+    cout << "\n";
+
 
     //PRUEBAS DE CLASE CLIENTE
     cout << "* * * Pruebas para clase Cliente * * *" << endl;
@@ -108,8 +133,13 @@ int main()
     cout << cliente1.reembolsoCliente() << endl;
     cout << cliente1.descuentoCliente() << endl;
     cout << cliente1.formaDevolucion() << endl;
-
     cout << "\n";
+    cout << "\n";
+    cliente1.cancelacionCliente("Blusa","Unisex","136",1);
+    cout << cliente1.datosCancelacionCliente() << endl;
+    cout << "Mensaje :  " << cliente1.pagoInicialCliente() << endl;
+    cout << "Atencion : " << cliente1.confirmaCancelarCliente() << endl;
+
 
     Cliente cliente2{"Harry","Inglaterra",20,"Londres",58453,23};
     cliente2.blusaCliente(98,68,65,"azul","no");
@@ -128,6 +158,11 @@ int main()
     cout << cliente2.reembolsoCliente() << endl;
     cout << cliente2.descuentoCliente() << endl;
     cout << cliente2.formaDevolucion() << endl;
+    cout << "\n";
+    cliente2.cancelacionCliente("Pantalon","Femenino","521",1);
+    cout << cliente2.datosCancelacionCliente() << endl;
+    cout << "Mensaje :  " << cliente2.pagoInicialCliente() << endl;
+    cout << "Atencion : " << cliente2.confirmaCancelarCliente() << endl;
 
     cout << "\n";
 
@@ -148,6 +183,11 @@ int main()
     cout << cliente3.reembolsoCliente() << endl;
     cout << cliente3.descuentoCliente() << endl;
     cout << cliente3.formaDevolucion() << endl;
+    cout << "\n";
+    cliente3.cancelacionCliente("Blusa","Femenino","287",0);
+    cout << cliente3.datosCancelacionCliente() << endl;
+    cout << "Mensaje :  " << cliente3.pagoInicialCliente() << endl;
+    cout << "Atencion : " << cliente3.confirmaCancelarCliente() << endl;
 
 
     return 0;

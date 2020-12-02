@@ -7,6 +7,7 @@
 #include "Blusa.h"
 #include "Pantalon.h"
 #include "Devolucion.h" //Archivo de clase creada por Liciel Reyes Ávila (ETAPA INDIVIDUAL)
+#include "Cancelar.h" //Archivo de clase creada por Daniela Jace Olguín Montiel (ETAPA INDIVIDUAL)
 
 #include <string>
 #include <iostream>
@@ -24,6 +25,7 @@ private:
     Pantalon pantalon; //Objeto de tipo Pantalon
     Blusa blusa; //Objeto de tipo Blusa
     Devolucion devolucion; //Objeto de tipo Devolucion
+    Cancelar cancelacion;
 
 public:
 
@@ -38,6 +40,7 @@ public:
         pantalon = Pantalon{}; 
         blusa = Blusa{}; 
         devolucion = Devolucion{};
+        cancelacion = Cancelar{};
     }
 
     //Destructor
@@ -54,6 +57,7 @@ public:
         pantalon = {}; 
         blusa = {};
         devolucion = {};
+        cancelacion = {};
     }
 
     //Getters
@@ -66,6 +70,7 @@ public:
     Pantalon getPantalon(){return pantalon;}
     Blusa getBlusa(){return blusa;}
     Devolucion getDevolucion(){return devolucion;}
+    Cancelar getCancelar(){return cancelacion;}
 
     //Setters
     void setNombreCliente(string nombre){nombreCliente = nombre;}
@@ -77,6 +82,7 @@ public:
     void setPantalon(Pantalon pant){pantalon = pant;}
     void setBlusa(Blusa blu){blusa = blu;}
     void setDevolucion(Devolucion dev){devolucion = dev;}
+    void setCancelar(Cancelar canc){cancelacion = canc;}
 
 
     //MÉTODOS
@@ -141,6 +147,23 @@ public:
     del producto, método de devolución)
     string datosDevolucion(){
         return devolucion.print();
+    }
+
+    //Funcion para que el usuario pueda establecer facilmente los valores de la clase Cancelar
+    void cancelacionCliente(string tipoPrenda, string generoPrenda, string numeroCliente, int metodoCliente){
+        cancelacion = Cancelar{tipoPrenda,generoPrenda,numeroCliente,metodoCliente};
+    }
+
+    string confirmaCancelarCliente(){
+        return cancelacion.confirmaCancelar();
+    }
+    
+    string pagoInicialCliente(){
+        return cancelacion.pagoInicial();
+    }
+
+    string datosCancelacionCliente(){
+        return cancelacion.print();
     }
 
     //Funcion que regresa string concatenado para saber el precio a pagar por comprar una blusa y un pantalón
