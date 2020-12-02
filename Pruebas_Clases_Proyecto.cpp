@@ -96,11 +96,18 @@ int main()
     cliente1.pantalonCliente(100,69,60,"negro","cierre");
     cout << cliente1.printDatos() << endl;
     cout << cliente1.printDireccion() << endl;
+    cout << "\n";
     cout << cliente1.colorBlusa() << endl;
     cout << cliente1.datosBlusa() << endl;
     cout << cliente1.colorPantalon() << endl;
     cout << cliente1.datosPantalon() << endl;
     cout << cliente1.precioPagar() << endl;
+    cout << "\n";
+    cliente1.devolucionCliente("Blusa","Unisex","usado",1);
+    cout << cliente1.datosDevolucion() << endl;
+    cout << cliente1.reembolsoCliente() << endl;
+    cout << cliente1.descuentoCliente() << endl;
+    cout << cliente1.formaDevolucion() << endl;
 
     cout << "\n";
 
@@ -109,25 +116,34 @@ int main()
     cliente2.pantalonCliente(104,62,63,"blanco","botones");
     cout << cliente2.printDatos() << endl;
     cout << cliente2.printDireccion() << endl;
+    cout << "\n";
     cout << cliente2.colorBlusa() << endl;
     cout << cliente2.datosBlusa() << endl;
     cout << cliente2.colorPantalon() << endl;
     cout << cliente2.datosPantalon() << endl;
     cout << cliente2.precioPagar() << endl;
+    cout << "\n";
+    cliente2.devolucionCliente("Blusa","Femenino","nuevo",0);
+    cout << cliente2.datosDevolucion() << endl;
+    cout << cliente2.reembolsoCliente() << endl;
+    cout << cliente2.descuentoCliente() << endl;
+    cout << cliente2.formaDevolucion() << endl;
 
     cout << "\n";
 
     Cliente cliente3{"Jungkook","Reforma",15,"Revolucion",57233,23};
     cliente3.blusaCliente(104,69,66,"blanco","si");
     cliente3.pantalonCliente(96,65,58,"negro","cierre");
-    cliente3.devolucionCliente("Pantalon","Masculino","nuevo",1);
     cout << cliente3.printDatos() << endl;
     cout << cliente3.printDireccion() << endl;
+    cout << "\n";
     cout << cliente3.colorBlusa() << endl;
     cout << cliente3.datosBlusa() << endl;
     cout << cliente3.colorPantalon() << endl;
     cout << cliente3.datosPantalon() << endl;
     cout << cliente3.precioPagar() << endl;
+    cout << "\n";
+    cliente3.devolucionCliente("Pantalon","Masculino","nuevo",1);
     cout << cliente3.datosDevolucion() << endl;
     cout << cliente3.reembolsoCliente() << endl;
     cout << cliente3.descuentoCliente() << endl;
